@@ -66,7 +66,7 @@ class MainActivity:ComponentActivity(){
  }
 }
 @Composable private fun BlockScreen(policy:FocusState,modifier:Modifier){
- val apps=remember{launchableAppsLocalCache(policy)}
+ val apps=launchableAppsLocalCache()
  var selected by remember{mutableStateOf(policy.blocked())}
  Column(modifier.fillMaxSize().padding(16.dp)){
   Text("Blocked apps",style=MaterialTheme.typography.headlineMedium)
@@ -85,7 +85,7 @@ class MainActivity:ComponentActivity(){
   }
  }
 }
-@Composable private fun launchableAppsLocalCache(policy:FocusState):List<AppEntry>{
+@Composable private fun launchableAppsLocalCache():List<AppEntry>{
  val context=androidx.compose.ui.platform.LocalContext.current
  return remember(context){launchableApps(context)}
 }
