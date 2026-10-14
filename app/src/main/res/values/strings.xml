@@ -1,0 +1,1 @@
+<resources><string name="app_name">FocusFlow</string><string name="accessibility_description">Detects selected restricted apps while a focus session is active and redirects the user away from them. All information stays on this device.</string></resources>
